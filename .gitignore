@@ -111,3 +111,8 @@ wandb/
 
 # Slurm
 *.out
+
+# json configs and training results 
+*.th
+*.npz
+*.json
