@@ -123,4 +123,5 @@ MUJOCO_LOG.TXT
 #video recording
 recording/
 
+maml-halfcheetah-vel/
 
