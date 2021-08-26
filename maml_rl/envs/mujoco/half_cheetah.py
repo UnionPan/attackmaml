@@ -20,14 +20,16 @@ class HalfCheetahEnv(HalfCheetahEnv_):
         self.viewer._hide_overlay = True
 
     def render(self, mode='human'):
+        width, height = 500, 500
         if mode == 'rgb_array':
-            self._get_viewer(mode = 'rgb_array').render()
+            
+            self._get_viewer(mode).render(width, height)
             # window size used for old mujoco-py:
-            width, height = 500, 500
-            data = self._get_viewer().read_pixels(width, height, depth=False)
+            #width, height = 500, 500
+            data = self._get_viewer(mode).read_pixels(width, height, depth=False)
             return data
         elif mode == 'human':
-            self._get_viewer(mode = 'human').render()
+            self._get_viewer(mode).render(width, height)
 
 
 class HalfCheetahVelEnv(HalfCheetahEnv):
@@ -48,7 +50,7 @@ class HalfCheetahVelEnv(HalfCheetahEnv):
         model-based control", 2012 
         (https://homes.cs.washington.edu/~todorov/papers/TodorovIROS12.pdf)
     """
-    def __init__(self, task={}, low=0.0, high=2.0):
+    def __init__(self, task={}, low=1.5, high=2.0):
         self._task = task
         self.low = low
         self.high = high

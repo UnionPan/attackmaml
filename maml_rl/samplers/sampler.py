@@ -8,7 +8,7 @@ class make_env(object):
 
     def __call__(self):
         env = gym.make(self.env_name, **self.env_kwargs)
-        #env = gym.wrappers.Monitor(env, "recording")
+        env = gym.wrappers.Monitor(env, "recording", force=True)
         if hasattr(env, 'seed'):
             env.seed(self.seed)
         return env

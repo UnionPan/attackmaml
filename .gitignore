@@ -113,6 +113,14 @@ wandb/
 *.out
 
 # json configs and training results 
-*.th
-*.npz
-*.json
+*/*.th
+*/*.npz
+*/*.json
+
+#mojoco log file
+MUJOCO_LOG.TXT
+
+#video recording
+recording/
+
+
